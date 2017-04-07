@@ -6,3 +6,6 @@ imports:
 sulu_admin:
     name: "%sulu_admin.name%"
     email: "%sulu_admin.email%"
+
+sulu_preview:
+    mode: off

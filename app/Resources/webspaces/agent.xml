@@ -3,23 +3,17 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
 
-    <name>example.com</name>
-    <key>example</key>
+    <name>AgentConf</name>
+    <key>agent</key>
 
     <localizations>
         <localization language="en" default="true"/>
     </localizations>
 
     <default-templates>
-        <default-template type="page">default</default-template>
+        <default-template type="page">homepage</default-template>
         <default-template type="home">homepage</default-template>
     </default-templates>
-
-    <templates>
-        <template type="search">search.html.twig</template>
-        <template type="error">error/default.html.twig</template>
-        <template type="error-404">error/404.html.twig</template>
-    </templates>
 
     <navigation>
         <contexts>
@@ -34,8 +28,8 @@
 
     <portals>
         <portal>
-            <name>example.com</name>
-            <key>example</key>
+            <name>AgentConf</name>
+            <key>agent</key>
 
             <environments>
                 <environment type="prod">

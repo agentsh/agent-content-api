@@ -7,7 +7,7 @@
 
     <view>templates/homepage</view>
     <controller>SuluWebsiteBundle:Default:index</controller>
-    <cacheLifetime>2400</cacheLifetime>
+    <cacheLifetime>3600</cacheLifetime>
 
     <meta>
         <title lang="en">Homepage</title>
@@ -39,12 +39,5 @@
                 </property>
             </properties>
         </section>
-
-        <property name="article" type="text_editor">
-            <meta>
-                <title lang="en">Article</title>
-                <title lang="de">Artikel</title>
-            </meta>
-        </property>
     </properties>
 </template>
