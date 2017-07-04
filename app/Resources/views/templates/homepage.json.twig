@@ -1,3 +1,23 @@
+{% if content.animation_background_1|length > 0 %}
+{% set animationBackground1 = content.animation_background_1[0].formats %}
+{% endif %}
+{% if content.animation_background_2|length > 0 %}
+{% set animationBackground2 = content.animation_background_2[0].formats %}
+{% endif %}
 {
-    "title": "{{ content.title }}"
+    "title": "{{ content.title }}",
+    "animationBackground1": {
+        {% if animationBackground1 is defined %}
+        "small": "{{ absolute_url(animationBackground1['1000x']) }}",
+        "medium": "{{ absolute_url(animationBackground1['2000x']) }}",
+        "large": "{{ absolute_url(animationBackground1['3000x']) }}"
+        {% endif %}
+    },
+    "animationBackground2": {
+        {% if animationBackground2 is defined %}
+        "small": "{{ absolute_url(animationBackground2['1000x']) }}",
+        "medium": "{{ absolute_url(animationBackground2['2000x']) }}",
+        "large": "{{ absolute_url(animationBackground2['3000x']) }}"
+        {% endif %}
+    }
 }

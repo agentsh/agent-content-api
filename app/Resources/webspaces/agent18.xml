@@ -4,7 +4,7 @@
           xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
 
     <name>AgentConf</name>
-    <key>agent</key>
+    <key>agent18</key>
 
     <localizations>
         <localization language="en" default="true"/>
