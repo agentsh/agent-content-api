@@ -19,5 +19,8 @@
         "medium": "{{ absolute_url(animationBackground2['2000x']) }}",
         "large": "{{ absolute_url(animationBackground2['3000x']) }}"
         {% endif %}
+    },
+    "seo": {
+        {% include 'seo.json.twig' %}
     }
 }

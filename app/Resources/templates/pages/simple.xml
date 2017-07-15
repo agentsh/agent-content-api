@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>simple</key>
+
+    <view>templates/simple</view>
+    <controller>SuluWebsiteBundle:Default:index</controller>
+    <cacheLifetime>3600</cacheLifetime>
+
+    <meta>
+        <title lang="en">Simple Content</title>
+        <title lang="de">Einfacher Content</title>
+    </meta>
+
+    <properties>
+        <section name="highlight">
+            <properties>
+                <property name="title" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Title</title>
+                        <title lang="de">Titel</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+
+                    <tag name="sulu.rlp.part"/>
+                </property>
+
+                <property name="url" type="resource_locator" mandatory="true">
+                    <meta>
+                        <title lang="en">Resourcelocator</title>
+                        <title lang="de">Adresse</title>
+                    </meta>
+
+                    <tag name="sulu.rlp"/>
+                </property>
+            </properties>
+        </section>
+
+        <property name="header_image" type="media_selection">
+            <meta>
+                <title lang="en">Header image</title>
+                <title lang="de">Header Bild</title>
+            </meta>
+            <params>
+                <param name="type" value="image"/>
+                <param name="displayOptions" type="collection">
+                    <param name="leftTop" value="false"/>
+                    <param name="top" value="false"/>
+                    <param name="rightTop" value="false"/>
+                    <param name="left" value="false"/>
+                    <param name="middle" value="false"/>
+                    <param name="right" value="false"/>
+                    <param name="leftBottom" value="false"/>
+                    <param name="bottom" value="false"/>
+                    <param name="rightBottom" value="false"/>
+                </param>
+            </params>
+        </property>
+
+        <property name="article" type="text_editor">
+            <meta>
+                <title lang="en">Article</title>
+                <title lang="de">Artikel</title>
+            </meta>
+
+            <params>
+                <param name="table" value="true"/>
+                <param name="link" value="true"/>
+                <param name="paste_from_word" value="true"/>
+                <param name="height" value="100"/>
+                <param name="max_height" value="200"/>
+                <!-- CKEditor Parameters examples: -->
+                <param name="extra_allowed_content" value="img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]" />
+                <param name="ui_color" value="#ffcc00"/>
+            </params>
+        </property>
+
+    </properties>
+</template>
