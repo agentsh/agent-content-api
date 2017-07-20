@@ -1,0 +1,17 @@
+{% if content.header_image|length > 0 %}
+{% set headerImage = content.header_image[0].formats %}
+{% endif %}
+{
+    "title": "{{ content.title }}",
+    "headerImage": {
+        {% if headerImage is defined %}
+        "small": "{{ absolute_url(headerImage['1000x']) }}",
+        "medium": "{{ absolute_url(headerImage['2000x']) }}",
+        "large": "{{ absolute_url(headerImage['3000x']) }}"
+        {% endif %}
+    },
+    "main": "{{ content.article }}",
+    "seo": {
+        {% include 'seo.json.twig' %}
+    }
+}
