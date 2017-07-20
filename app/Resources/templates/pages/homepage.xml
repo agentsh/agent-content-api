@@ -81,5 +81,106 @@
                 </param>
             </params>
         </property>
+
+        <section name="video">
+            <properties>
+                <property name="video_headline" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Video headline</title>
+                    </meta>
+                </property>
+                <property name="video_youtube_id" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Video youtube id</title>
+                    </meta>
+                </property>
+                <property name="video_teaser_image" type="media_selection">
+                    <meta>
+                        <title lang="en">Video teaser image</title>
+                    </meta>
+                    <params>
+                        <param name="type" value="image"/>
+                        <param name="displayOptions" type="collection">
+                            <param name="leftTop" value="false"/>
+                            <param name="top" value="false"/>
+                            <param name="rightTop" value="false"/>
+                            <param name="left" value="false"/>
+                            <param name="middle" value="false"/>
+                            <param name="right" value="false"/>
+                            <param name="leftBottom" value="false"/>
+                            <param name="bottom" value="false"/>
+                            <param name="rightBottom" value="false"/>
+                        </param>
+                    </params>
+                </property>
+            </properties>
+        </section>
+        <section name="tickets">
+            <properties>
+                <property name="ticket_1_headline" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 1 headline</title>
+                    </meta>
+                </property>
+                <property name="ticket_1_price" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 1 price</title>
+                    </meta>
+                </property>
+
+                <property name="ticket_1_description" type="text_area" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 1 description</title>
+                    </meta>
+                </property>
+                <property name="ticket_1_button_text" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 1 button text</title>
+                    </meta>
+                </property>
+                <property name="ticket_2_headline" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 1 headline</title>
+                    </meta>
+                </property>
+                <property name="ticket_2_price" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 2 price</title>
+                    </meta>
+                </property>
+
+                <property name="ticket_2_description" type="text_area" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 2 description</title>
+                    </meta>
+                </property>
+                <property name="ticket_2_button_text" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 2 button text</title>
+                    </meta>
+                </property>
+                <property name="ticket_3_headline" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 3 headline</title>
+                    </meta>
+                </property>
+                <property name="ticket_3_price" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 3 price</title>
+                    </meta>
+                </property>
+
+                <property name="ticket_3_description" type="text_area" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 3 description</title>
+                    </meta>
+                </property>
+                <property name="ticket_3_button_text" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Ticket 3 button text</title>
+                    </meta>
+                </property>
+            </properties>
+        </section>
     </properties>
 </template>

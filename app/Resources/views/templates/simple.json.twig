@@ -10,8 +10,15 @@
         "large": "{{ absolute_url(headerImage['3000x']) }}"
         {% endif %}
     },
-    "main": "{{ content.article }}",
+    "title2": "{{ content.title2 }}",
+    "article": "{{ content.article|replace({"\n":' ', "\r":' '})|raw}}",
     "seo": {
-        {% include 'seo.json.twig' %}
+        {% include 'seo.json.twig' with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('de')
+    } %}
     }
 }

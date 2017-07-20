@@ -4,6 +4,9 @@
 {% if content.animation_background_2|length > 0 %}
 {% set animationBackground2 = content.animation_background_2[0].formats %}
 {% endif %}
+{% if content.video_teaser_image|length > 0 %}
+{% set videoTeaserImage = content.video_teaser_image[0].formats %}
+{% endif %}
 {
     "title": "{{ content.title }}",
     "animationBackground1": {
@@ -20,7 +23,39 @@
         "large": "{{ absolute_url(animationBackground2['3000x']) }}"
         {% endif %}
     },
+    "videoHeadline": "{{ content.video_headline }}",
+    "videoYoutubeId": "{{ content.video_youtube_id }}",
+    "videoTeaserImage": {
+        {% if videoTeaserImage is defined %}
+        "small": "{{ absolute_url(videoTeaserImage['1000x']) }}",
+        "medium": "{{ absolute_url(videoTeaserImage['2000x']) }}",
+        "large": "{{ absolute_url(videoTeaserImage['3000x']) }}"
+        {% endif %}
+    },
+
+    "ticket1Headline": "{{ content.ticket_1_headline }}",
+    "ticket1Price": "{{ content.ticket_1_price }}",
+    "ticket1Description": "{{ content.ticket_1_description|replace({"\n": "<br>"})|raw}}",
+    "ticket1ButtonText": "{{ content.ticket_1_button_text }}",
+
+    "ticket2Headline": "{{ content.ticket_2_headline }}",
+    "ticket2Price": "{{ content.ticket_2_price }}",
+    "ticket2Description": "{{ content.ticket_2_description|replace({"\n": "<br>"})|raw}}",
+    "ticket2ButtonText": "{{ content.ticket_2_button_text }}",
+
+    "ticket3Headline": "{{ content.ticket_3_headline }}",
+    "ticket3Price": "{{ content.ticket_3_price }}",
+    "ticket3Description": "{{ content.ticket_3_description|replace({"\n": "<br>"})|raw}}",
+    "ticket3ButtonText": "{{ content.ticket_3_button_text }}",
+
+
     "seo": {
-        {% include 'seo.json.twig' %}
+        {% include 'seo.json.twig' with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('de')
+    } %}
     }
 }
