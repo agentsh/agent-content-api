@@ -22,9 +22,14 @@
 {% set seoCanonical = sulu_content_path(urls[shadowBaseLocale], null, shadowBaseLocale) %}
 {%- endif -%}
 
-
 "title": "{{ seoTitle }}",
 "description": "{{ seoDescription }}",
 "keywords": "{{ seoKeywords }}",
 "robots": "{{ seoRobots }}",
-"canonical": "{{ seoCanonical }}"
+"canonical": "{{ seoCanonical }}",
+{% if images|length > 0 %}
+  {% set image = images[0].formats %}
+  "image":"{{ absolute_url(image['og_image']) }}"
+{% else %}
+  "image": null
+{% endif %}

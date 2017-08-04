@@ -35,5 +35,17 @@
             </command>
         </commands>
     </format>
+     <format>
+        <name>og_image</name>
+        <commands>
+            <command>
+                <action>resize</action>
+                <parameters>
+                    <parameter name="x">600</parameter>
+                    <parameter name="y">600</parameter>
+                </parameters>
+            </command>
+        </commands>
+    </format>
 </formats>
 

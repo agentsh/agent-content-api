@@ -41,6 +41,8 @@ app/maintenance.php
 
 # IDEs
 /.idea
+.vscode/
+.php_cs.cache
 *.iml
 *~
 
