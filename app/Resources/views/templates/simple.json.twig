@@ -11,7 +11,7 @@
         {% endif %}
     },
     "title2": "{{ content.title2 }}",
-    "article": "{{ content.article|replace({"\n":' ', "\r":' '})|raw}}",
+    "article": "{{ content.article|replace({"\n":' ', "\r":' '})|replace({'"':"'"})|raw}}",
     "seo": {
         {% include 'seo.json.twig' with {
         "seo": extension.seo|default([]),
