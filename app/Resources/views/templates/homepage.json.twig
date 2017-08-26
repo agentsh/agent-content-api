@@ -9,6 +9,7 @@
 {% endif %}
 {
     "title": "{{ content.title }}",
+    "cfpDeadline": "{{ content.cfp_deadline }}",
     "animationBackground1": {
         {% if animationBackground1 is defined %}
         "small": "{{ absolute_url(animationBackground1['1000x']) }}",
