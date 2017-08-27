@@ -40,6 +40,13 @@
             </properties>
         </section>
 
+        <property name="cfp_deadline" type="date">
+            <meta>
+                <title lang="en">Call for Papers Deadline</title>
+                <title lang="en">Call for Papers Deadline</title>
+            </meta>
+        </property>
+
         <property name="animation_background_1" type="media_selection">
             <meta>
                 <title lang="en">Background Animation 1</title>
