@@ -1,193 +1,263 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <template xmlns="http://schemas.sulu.io/template/template"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
-    <key>homepage</key>
-
-    <view>templates/homepage</view>
-    <controller>SuluWebsiteBundle:Default:index</controller>
-    <cacheLifetime>3600</cacheLifetime>
-
-    <meta>
-        <title lang="en">Homepage</title>
-        <title lang="de">Startseite</title>
-    </meta>
-
-    <properties>
-        <section name="highlight">
-            <properties>
-                <property name="title" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Title</title>
-                        <title lang="de">Titel</title>
-                    </meta>
-                    <params>
-                        <param name="headline" value="true"/>
-                    </params>
-
-                    <tag name="sulu.rlp.part"/>
-                </property>
-
-                <property name="url" type="resource_locator" mandatory="true">
-                    <meta>
-                        <title lang="en">Resourcelocator</title>
-                        <title lang="de">Adresse</title>
-                    </meta>
-
-                    <tag name="sulu.rlp"/>
-                </property>
-            </properties>
-        </section>
-
-        <property name="cfp_deadline" type="date">
-            <meta>
-                <title lang="en">Call for Papers Deadline</title>
-                <title lang="en">Call for Papers Deadline</title>
-            </meta>
+  <key>homepage</key>
+  <view>templates/homepage</view>
+  <controller>SuluWebsiteBundle:Default:index</controller>
+  <cacheLifetime>3600</cacheLifetime>
+  <meta>
+    <title lang="en">Homepage</title>
+    <title lang="de">Startseite</title>
+  </meta>
+  <properties>
+    <section name="highlight">
+      <properties>
+        <property name="title" type="text_line" mandatory="true">
+          <meta>
+            <title lang="en">Title</title>
+            <title lang="de">Titel</title>
+          </meta>
+          <params>
+            <param name="headline" value="true" />
+          </params>
+          <tag name="sulu.rlp.part" />
         </property>
-
-        <property name="animation_background_1" type="media_selection">
-            <meta>
-                <title lang="en">Background Animation 1</title>
-                <title lang="de">Hintergrund Animation 1</title>
-            </meta>
-            <params>
-                <param name="type" value="image"/>
+        <property name="url" type="resource_locator"
+        mandatory="true">
+          <meta>
+            <title lang="en">Resourcelocator</title>
+            <title lang="de">Adresse</title>
+          </meta>
+          <tag name="sulu.rlp" />
+        </property>
+      </properties>
+    </section>
+    <property name="cfp_deadline" type="date">
+      <meta>
+        <title lang="en">Call for Papers Deadline</title>
+        <title lang="en">Call for Papers Deadline</title>
+      </meta>
+    </property>
+    <property name="animation_background_1" type="media_selection">
+      <meta>
+        <title lang="en">Background Animation 1</title>
+        <title lang="de">Hintergrund Animation 1</title>
+      </meta>
+      <params>
+        <param name="type" value="image" />
+        <param name="displayOptions" type="collection">
+          <param name="leftTop" value="false" />
+          <param name="top" value="false" />
+          <param name="rightTop" value="false" />
+          <param name="left" value="false" />
+          <param name="middle" value="false" />
+          <param name="right" value="false" />
+          <param name="leftBottom" value="false" />
+          <param name="bottom" value="false" />
+          <param name="rightBottom" value="false" />
+        </param>
+      </params>
+    </property>
+    <property name="animation_background_2" type="media_selection">
+      <meta>
+        <title lang="en">Background Animation 2</title>
+        <title lang="de">Hintergrund Animation 2</title>
+      </meta>
+      <params>
+        <param name="type" value="image" />
+        <param name="displayOptions" type="collection">
+          <param name="leftTop" value="false" />
+          <param name="top" value="false" />
+          <param name="rightTop" value="false" />
+          <param name="left" value="false" />
+          <param name="middle" value="false" />
+          <param name="right" value="false" />
+          <param name="leftBottom" value="false" />
+          <param name="bottom" value="false" />
+          <param name="rightBottom" value="false" />
+        </param>
+      </params>
+    </property>
+    <section name="video">
+      <properties>
+        <property name="video_headline" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Video headline</title>
+          </meta>
+        </property>
+        <property name="video_youtube_id" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Video youtube id</title>
+          </meta>
+        </property>
+        <property name="video_teaser_image" type="media_selection">
+          <meta>
+            <title lang="en">Video teaser image</title>
+          </meta>
+          <params>
+            <param name="type" value="image" />
+            <param name="displayOptions" type="collection">
+              <param name="leftTop" value="false" />
+              <param name="top" value="false" />
+              <param name="rightTop" value="false" />
+              <param name="left" value="false" />
+              <param name="middle" value="false" />
+              <param name="right" value="false" />
+              <param name="leftBottom" value="false" />
+              <param name="bottom" value="false" />
+              <param name="rightBottom" value="false" />
+            </param>
+          </params>
+        </property>
+      </properties>
+    </section>
+    <section name="tickets">
+      <properties>
+        <property name="ticket_1_headline" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 1 headline</title>
+          </meta>
+        </property>
+        <property name="ticket_1_price" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 1 price</title>
+          </meta>
+        </property>
+        <property name="ticket_1_description" type="text_area"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 1 description</title>
+          </meta>
+        </property>
+        <property name="ticket_1_button_text" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 1 button text</title>
+          </meta>
+        </property>
+        <property name="ticket_2_headline" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 1 headline</title>
+          </meta>
+        </property>
+        <property name="ticket_2_price" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 2 price</title>
+          </meta>
+        </property>
+        <property name="ticket_2_description" type="text_area"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 2 description</title>
+          </meta>
+        </property>
+        <property name="ticket_2_button_text" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 2 button text</title>
+          </meta>
+        </property>
+        <property name="ticket_3_headline" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 3 headline</title>
+          </meta>
+        </property>
+        <property name="ticket_3_price" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 3 price</title>
+          </meta>
+        </property>
+        <property name="ticket_3_description" type="text_area"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 3 description</title>
+          </meta>
+        </property>
+        <property name="ticket_3_button_text" type="text_line"
+        mandatory="true">
+          <meta>
+            <title lang="en">Ticket 3 button text</title>
+          </meta>
+        </property>
+      </properties>
+    </section>
+    <block name="speakers" default-type="speaker" minOccurs="0"
+    maxOccurs="30">
+      <meta>
+        <title lang="en">SpeakerInfos</title>
+      </meta>
+      <types>
+        <type name="speaker">
+          <meta>
+            <title lang="en">Speaker</title>
+          </meta>
+          <properties>
+            <property name="isModerator" type="checkbox">
+              <meta>
+                <title lang="en">Moderator</title>
+              </meta>
+            </property>
+            <property name="name" type="text_line"
+            mandatory="true">
+              <meta>
+                <title lang="en">Name</title>
+              </meta>
+            </property>
+            <property name="title" type="text_line"
+            mandatory="true">
+              <meta>
+                <title lang="en">Title</title>
+              </meta>
+            </property>
+            <property name="github" type="text_line"
+            mandatory="false">
+              <meta>
+                <title lang="en">Github handle</title>
+              </meta>
+            </property>
+            <property name="twitter" type="text_line"
+            mandatory="false">
+              <meta>
+                <title lang="en">Twitter handle</title>
+              </meta>
+            </property>
+            <property name="teaser" type="text_editor">
+              <meta>
+                <title lang="en">teaser</title>
+              </meta>
+            </property>
+            <property name="image" type="media_selection">
+              <meta>
+                <title lang="en">Foto</title>
+              </meta>
+              <params>
+                <param name="type" value="image" />
                 <param name="displayOptions" type="collection">
-                    <param name="leftTop" value="false"/>
-                    <param name="top" value="false"/>
-                    <param name="rightTop" value="false"/>
-                    <param name="left" value="false"/>
-                    <param name="middle" value="false"/>
-                    <param name="right" value="false"/>
-                    <param name="leftBottom" value="false"/>
-                    <param name="bottom" value="false"/>
-                    <param name="rightBottom" value="false"/>
+                  <param name="leftTop" value="false" />
+                  <param name="top" value="false" />
+                  <param name="rightTop" value="false" />
+                  <param name="left" value="false" />
+                  <param name="middle" value="false" />
+                  <param name="right" value="false" />
+                  <param name="leftBottom" value="false" />
+                  <param name="bottom" value="false" />
+                  <param name="rightBottom" value="false" />
                 </param>
-            </params>
-        </property>
-
-        <property name="animation_background_2" type="media_selection">
-            <meta>
-                <title lang="en">Background Animation 2</title>
-                <title lang="de">Hintergrund Animation 2</title>
-            </meta>
-            <params>
-                <param name="type" value="image"/>
-                <param name="displayOptions" type="collection">
-                    <param name="leftTop" value="false"/>
-                    <param name="top" value="false"/>
-                    <param name="rightTop" value="false"/>
-                    <param name="left" value="false"/>
-                    <param name="middle" value="false"/>
-                    <param name="right" value="false"/>
-                    <param name="leftBottom" value="false"/>
-                    <param name="bottom" value="false"/>
-                    <param name="rightBottom" value="false"/>
-                </param>
-            </params>
-        </property>
-
-        <section name="video">
-            <properties>
-                <property name="video_headline" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Video headline</title>
-                    </meta>
-                </property>
-                <property name="video_youtube_id" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Video youtube id</title>
-                    </meta>
-                </property>
-                <property name="video_teaser_image" type="media_selection">
-                    <meta>
-                        <title lang="en">Video teaser image</title>
-                    </meta>
-                    <params>
-                        <param name="type" value="image"/>
-                        <param name="displayOptions" type="collection">
-                            <param name="leftTop" value="false"/>
-                            <param name="top" value="false"/>
-                            <param name="rightTop" value="false"/>
-                            <param name="left" value="false"/>
-                            <param name="middle" value="false"/>
-                            <param name="right" value="false"/>
-                            <param name="leftBottom" value="false"/>
-                            <param name="bottom" value="false"/>
-                            <param name="rightBottom" value="false"/>
-                        </param>
-                    </params>
-                </property>
-            </properties>
-        </section>
-        <section name="tickets">
-            <properties>
-                <property name="ticket_1_headline" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 1 headline</title>
-                    </meta>
-                </property>
-                <property name="ticket_1_price" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 1 price</title>
-                    </meta>
-                </property>
-
-                <property name="ticket_1_description" type="text_area" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 1 description</title>
-                    </meta>
-                </property>
-                <property name="ticket_1_button_text" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 1 button text</title>
-                    </meta>
-                </property>
-                <property name="ticket_2_headline" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 1 headline</title>
-                    </meta>
-                </property>
-                <property name="ticket_2_price" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 2 price</title>
-                    </meta>
-                </property>
-
-                <property name="ticket_2_description" type="text_area" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 2 description</title>
-                    </meta>
-                </property>
-                <property name="ticket_2_button_text" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 2 button text</title>
-                    </meta>
-                </property>
-                <property name="ticket_3_headline" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 3 headline</title>
-                    </meta>
-                </property>
-                <property name="ticket_3_price" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 3 price</title>
-                    </meta>
-                </property>
-
-                <property name="ticket_3_description" type="text_area" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 3 description</title>
-                    </meta>
-                </property>
-                <property name="ticket_3_button_text" type="text_line" mandatory="true">
-                    <meta>
-                        <title lang="en">Ticket 3 button text</title>
-                    </meta>
-                </property>
-            </properties>
-        </section>
-    </properties>
+              </params>
+            </property>
+          </properties>
+        </type>
+      </types>
+    </block>
+  </properties>
 </template>
