@@ -65,7 +65,7 @@
       {% for speaker in content.speakers%}
       {
         "name": "{{speaker.name}}",
-        "isModerator":{{speaker.isModerator}},
+        "isModerator":{{speaker.isModerator ? 'true' : 'false'}},
         "title": "{{speaker.title}}",
         "twitter": "{{speaker.twitter}}",
         "github": "{{speaker.github}}",
@@ -75,8 +75,11 @@
           "small": "{{ absolute_url(speaker.image[0].formats['slider']) }}"
         }
         {% endif %}
-
+      {% if loop.index < content.speakers|length %}
+      },
+      {% else %}
       }
+      {% endif %}
       {% endfor %}
     ]
     {% endif %}
