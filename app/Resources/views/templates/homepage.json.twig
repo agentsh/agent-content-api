@@ -49,7 +49,6 @@
     "ticket3Description": "{{ content.ticket_3_description|replace({"\n": "<br>"})|raw}}",
     "ticket3ButtonText": "{{ content.ticket_3_button_text }}",
 
-
     "seo": {
         {% include 'seo.json.twig' with {
         "seo": extension.seo|default([]),
@@ -59,5 +58,29 @@
         "defaultLocale": request.defaultLocale|default('de'),
         "images": extension.excerpt.images
     } %}
-    }
+    },
+
+    {% if content.speakers is defined and content.speakers|length >0 %}
+    "speakers": [
+      {% for speaker in content.speakers%}
+      {
+        "name": "{{speaker.name}}",
+        "isModerator":{{speaker.isModerator ? 'true' : 'false'}},
+        "title": "{{speaker.title}}",
+        "twitter": "{{speaker.twitter}}",
+        "github": "{{speaker.github}}",
+        "teaser": "{{speaker.teaser|replace({"\n":' ', "\r":' '})|replace({'"':"'"})|raw}}",
+        {% if speaker.image|length > 0 %}
+        "imageUrls":{
+          "small": "{{ absolute_url(speaker.image[0].formats['slider']) }}"
+        }
+        {% endif %}
+      {% if loop.index < content.speakers|length %}
+      },
+      {% else %}
+      }
+      {% endif %}
+      {% endfor %}
+    ]
+    {% endif %}
 }
