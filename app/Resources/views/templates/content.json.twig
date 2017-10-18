@@ -1,0 +1,57 @@
+{% if content.header_image|length > 0 %}
+{% set headerImage = content.header_image[0].formats %}
+{% endif %}
+{
+    "title": "{{ content.title }}",
+    "title2": "{{ content.title2 }}",
+    "seo": {
+        {% include 'seo.json.twig' with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('de'),
+        "images": extension.excerpt.images
+    } %}
+    },
+    "headerImage": {
+        {% if headerImage is defined %}
+        "small": "{{ absolute_url(headerImage['1000x']) }}",
+        "medium": "{{ absolute_url(headerImage['2000x']) }}",
+        "large": "{{ absolute_url(headerImage['3000x']) }}"
+        {% endif %}
+    },
+    "contentBlocks": [
+    {% if content.contentBlocks is defined and content.contentBlocks|length >0 %}
+        {% for cb in content.contentBlocks %}
+          {
+            "article": "{{cb.article|replace({"\n":' ', "\r":' '})|replace({'"':"'"})|raw}}",
+            "imageDescription": "{{cb.imageDescription|replace({"\n":' ', "\r":' '})|replace({'"':"'"})|raw}}",
+            "imagePosition": "{{view.contentBlocks[loop.index0].images.displayOption|default('left')}}",
+            "images": [
+                {% if cb.images|length > 0 %}
+                  {% for img in cb.images %}
+                    {
+                      "imageInfo": {
+                          "alt": "{{img.title}}",
+                          "description":"{{img.description}}",
+                          "small": "{{ absolute_url(img.formats['slider']) }}",
+                          "medium":"{{ absolute_url(img.formats['sliderImage']) }}"
+                      }
+                      {% if loop.index < cb.images|length %}
+                          },
+                      {% else %}
+                          }
+                      {% endif %}
+                  {%endfor%}
+                {% endif %}
+            ]
+            {% if loop.index < content.contentBlocks|length %}
+              },
+            {% else %}
+              }
+            {% endif %}
+      {% endfor %}
+    {% endif %}
+    ]
+}
