@@ -60,4 +60,16 @@ xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/
       </command>
     </commands>
   </format>
+  <format>
+    <name>sliderImage</name>
+    <commands>
+      <command>
+        <action>resize</action>
+        <parameters>
+          <parameter name="x">1000</parameter>
+          <parameter name="y">400</parameter>
+        </parameters>
+      </command>
+    </commands>
+  </format>
 </formats>
