@@ -16,15 +16,6 @@
                 <title lang="en">Title</title>
                 <title lang="de">Titel</title>
             </meta>
-
-            <tag name="sulu.node.name"/>
-        </property>
-
-        <property name="description" type="text_editor">
-            <meta>
-                <title lang="en">Description</title>
-                <title lang="de">Beschreibung</title>
-            </meta>
         </property>
     </properties>
 </template>
