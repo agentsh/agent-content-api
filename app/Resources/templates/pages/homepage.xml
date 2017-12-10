@@ -202,9 +202,9 @@ xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu
             <title lang="en">Speaker</title>
           </meta>
           <properties>
-            <property name="isModerator" type="checkbox">
+          <property name="slot" type="text_line" mandatory="false">
               <meta>
-                <title lang="en">Moderator</title>
+                <title lang="en">Slot(integer)</title>
               </meta>
             </property>
             <property name="name" type="text_line"
