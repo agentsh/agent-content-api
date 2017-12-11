@@ -1,0 +1,12 @@
+<properties xmlns="http://schemas.sulu.io/template/template">
+    <property name="sponsor_logo" type="media_selection">
+        <meta>
+            <title lang="en">Logo</title>
+        </meta>
+    </property>
+    <property name="sponsor_website" type="url">
+        <meta>
+            <title lang="en">Website</title>
+        </meta>
+    </property>
+</properties>

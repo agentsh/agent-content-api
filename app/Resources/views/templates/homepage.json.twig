@@ -7,6 +7,10 @@
 {% if content.video_teaser_image|length > 0 %}
 {% set videoTeaserImage = content.video_teaser_image[0].formats %}
 {% endif %}
+{% set sponsorSnippet = sulu_snippet_load_default('sponsors') %}
+{% if sponsorSnippet|length > 0 %}
+{% set sponsors = sponsorSnippet[0].content %}
+{% endif %}
 {
     "title": "{{ content.title }}",
     "cfpDeadline": "{{ content.cfp_deadline }}",
@@ -82,5 +86,39 @@
       {% endif %}
       {% endfor %}
     ]
+    {% endif %},
+    {% if sponsors.sponsor_logo|length > 0 %}
+    "mainSponsorLogo": "{{ absolute_url(sponsors.sponsor_logo[0].formats['sponsor']) }}",
     {% endif %}
+    "mainSponsorWebsite": "{{ sponsors.sponsor_website }}",
+    "sponsors": [
+    {% if sponsors.sponsors is defined and sponsors.sponsors|length > 0 %}
+        {% for sponsor in sponsors.sponsors %}
+        {
+        {% if sponsor.sponsor_logo|length > 0 %}
+            "logo": "{{ absolute_url(sponsor.sponsor_logo[0].formats['sponsor']) }}",
+        {% endif %}
+            "website": "{{ sponsor.sponsor_website }}"
+        }
+        {% if loop.index < sponsors.sponsors|length %}
+        ,
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    ],
+    "partners": [
+        {% if sponsors.partners is defined and sponsors.partners|length > 0 %}
+        {% for partner in sponsors.partners %}
+        {
+            {% if partner.sponsor_logo|length > 0 %}
+            "logo": "{{ absolute_url(partner.sponsor_logo[0].formats['sponsor']) }}",
+            {% endif %}
+            "website": "{{ partner.sponsor_website }}"
+        }
+        {% if loop.index < sponsors.partners|length %}
+    ,
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    ]
 }

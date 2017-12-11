@@ -72,4 +72,15 @@ xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/
       </command>
     </commands>
   </format>
+  <format>
+    <name>sponsor</name>
+    <commands>
+      <command>
+        <action>resize</action>
+        <parameters>
+          <parameter name="y">60</parameter>
+        </parameters>
+      </command>
+    </commands>
+  </format>
 </formats>
