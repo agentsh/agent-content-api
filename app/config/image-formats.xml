@@ -78,7 +78,22 @@ xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/
       <command>
         <action>resize</action>
         <parameters>
-          <parameter name="y">60</parameter>
+          <parameter name="x">260</parameter>
+          <parameter name="y">120</parameter>
+          <parameter name="mode">inset</parameter>
+        </parameters>
+      </command>
+    </commands>
+  </format>
+  <format>
+    <name>main_sponsor</name>
+    <commands>
+      <command>
+        <action>resize</action>
+        <parameters>
+          <parameter name="x">520</parameter>
+          <parameter name="y">240</parameter>
+          <parameter name="mode">inset</parameter>
         </parameters>
       </command>
     </commands>

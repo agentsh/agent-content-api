@@ -86,9 +86,10 @@
       {% endif %}
       {% endfor %}
     ]
-    {% endif %},
+    {% endif %}
+    {% if sponsors is defined %},
     {% if sponsors.sponsor_logo|length > 0 %}
-    "mainSponsorLogo": "{{ absolute_url(sponsors.sponsor_logo[0].formats['sponsor']) }}",
+    "mainSponsorLogo": "{{ absolute_url(sponsors.sponsor_logo[0].formats['main_sponsor']) }}",
     {% endif %}
     "mainSponsorWebsite": "{{ sponsors.sponsor_website }}",
     "sponsors": [
@@ -121,4 +122,5 @@
         {% endfor %}
         {% endif %}
     ]
+    {% endif %}
 }
