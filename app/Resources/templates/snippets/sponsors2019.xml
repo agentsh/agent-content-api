@@ -4,11 +4,11 @@
           xmlns:xi="http://www.w3.org/2001/XInclude"
           xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
-    <key>sponsors-2019</key>
+    <key>sponsors2019</key>
 
     <meta>
-        <title lang="en">Sponsors-2019</title>
-        <title lang="de">Sponsors-2019</title>
+        <title lang="en">Sponsors2019</title>
+        <title lang="de">Sponsors2019</title>
     </meta>
 
     <properties>
