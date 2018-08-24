@@ -9,10 +9,11 @@
 {% endif %}
 {% set sponsorSnippet = sulu_snippet_load_default('sponsors') %}
 {% if sponsorSnippet|length > 0 %}
-{% set sponsors = sponsorSnippet[0].content %}
+  {% set sponsors = sponsorSnippet[0].content %}
 {% endif %}
-{% if sponsorSnippet|length > 1 %}
-{% set sponsors2019 = sponsorSnippet[1].content %}
+{% set sponsor2019Snippet = sulu_snippet_load_default('sponsors-2019') %}
+{% if sponsor2019Snippet|length > 0 %}
+  {% set sponsors2019 = sponsorSnippet[0].content %}
 {% endif %}
 {
     "title": "{{ content.title }}",
@@ -66,7 +67,7 @@
         "images": extension.excerpt.images
     } %}
     },
-
+    
     {% if content.speakers is defined and content.speakers|length >0 %}
     "speakers": [
       {% for speaker in content.speakers%}
@@ -126,6 +127,7 @@
         {% endif %}
     ]
     {% endif %}
+
     {% if sponsors2019 is defined %},
     {% if sponsors2019.sponsor_logo|length > 0 %}
     "mainSponsor2019Logo": "{{ absolute_url(sponsors2019.sponsor_logo[0].formats['main_sponsor']) }}",
