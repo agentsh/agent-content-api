@@ -7,14 +7,10 @@
 {% if content.video_teaser_image|length > 0 %}
 {% set videoTeaserImage = content.video_teaser_image[0].formats %}
 {% endif %}
-{% set sponsorSnippet = sulu_snippet_load_default('sponsors') %}
-{% if sponsorSnippet|length > 0 %}
-  {% set sponsors = sponsorSnippet[0].content %}
-{% endif %}
-{% set sponsor2019Snippet = sulu_snippet_load_default('sponsors2019') %}
-{% if sponsor2019Snippet|length > 0 %}
-  {% set sponsors2019 = sponsor2019Snippet[0].content %}
-{% endif %}
+{% set sponsorSnippet = sulu_snippet_load('5f41cb26-bd22-460c-8b38-b516123f90af')%}
+{% set sponsors = sponsorSnippet.content %}
+{% set sponsor2019Snippet = sulu_snippet_load('bd5ad138-7e48-44e3-99ca-14d35caf7131') %}
+{% set sponsors2019 = sponsor2019Snippet.content %}
 {
     "title": "{{ content.title }}",
     "cfpDeadline": "{{ content.cfp_deadline }}",
