@@ -11,9 +11,8 @@
 {% if sponsorSnippet|length > 0 %}
 {% set sponsors = sponsorSnippet[0].content %}
 {% endif %}
-{% set sponsorSnippet2019 = sulu_snippet_load_default('sponsors-2019') %}
-{% if sponsorSnippet2019|length > 0 %}
-{% set sponsors2019 = sponsorSnippet2019[0].content %}
+{% if sponsorSnippet|length > 1 %}
+{% set sponsors2019 = sponsorSnippet[1].content %}
 {% endif %}
 {
     "title": "{{ content.title }}",
