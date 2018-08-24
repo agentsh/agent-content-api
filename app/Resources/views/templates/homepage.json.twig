@@ -11,6 +11,10 @@
 {% if sponsorSnippet|length > 0 %}
 {% set sponsors = sponsorSnippet[0].content %}
 {% endif %}
+{% set sponsorSnippet2019 = sulu_snippet_load_default('sponsors-2019') %}
+{% if sponsorSnippet2019|length > 0 %}
+{% set sponsors2019 = sponsorSnippet2019[0].content %}
+{% endif %}
 {
     "title": "{{ content.title }}",
     "cfpDeadline": "{{ content.cfp_deadline }}",
@@ -110,6 +114,42 @@
     "partners": [
         {% if sponsors.partners is defined and sponsors.partners|length > 0 %}
         {% for partner in sponsors.partners %}
+        {
+            {% if partner.sponsor_logo|length > 0 %}
+            "logo": "{{ absolute_url(partner.sponsor_logo[0].formats['sponsor']) }}",
+            {% endif %}
+            "website": "{{ partner.sponsor_website }}"
+        }
+        {% if loop.index < sponsors.partners|length %}
+    ,
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    ]
+    {% endif %}
+    {% if sponsors2019 is defined %},
+    {% if sponsors2019.sponsor_logo|length > 0 %}
+    "mainSponsor2019Logo": "{{ absolute_url(sponsors2019.sponsor_logo[0].formats['main_sponsor']) }}",
+    {% endif %}
+    "mainSponsor2019Website": "{{ sponsors2019.sponsor_website }}",
+    "sponsors2019": [
+    {% if sponsors2019.sponsors is defined and sponsors2019.sponsors|length > 0 %}
+        {% for sponsor in sponsors2019.sponsors %}
+        {
+        {% if sponsor.sponsor_logo|length > 0 %}
+            "logo": "{{ absolute_url(sponsor.sponsor_logo[0].formats['sponsor']) }}",
+        {% endif %}
+            "website": "{{ sponsor.sponsor_website }}"
+        }
+        {% if loop.index < sponsors.sponsors|length %}
+        ,
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    ],
+    "partners": [
+        {% if sponsors2019.partners is defined and sponsors2019.partners|length > 0 %}
+        {% for partner in sponsors2019.partners %}
         {
             {% if partner.sponsor_logo|length > 0 %}
             "logo": "{{ absolute_url(partner.sponsor_logo[0].formats['sponsor']) }}",
