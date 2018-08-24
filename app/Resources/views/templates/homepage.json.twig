@@ -102,7 +102,7 @@
         {% endif %}
             "website": "{{ sponsor.sponsor_website }}"
         }
-        {% if loop.index1 < sponsors.sponsors|length %}
+        {% if loop.index < sponsors.sponsors|length %}
         ,
         {% endif %}
         {% endfor %}
@@ -117,7 +117,7 @@
             {% endif %}
             "website": "{{ partner.sponsor_website }}"
         }
-        {% if loop.index1 < sponsors.partners|length %}
+        {% if loop.index < sponsors.partners|length %}
     ,
         {% endif %}
         {% endfor %}
@@ -141,7 +141,7 @@
         {% endif %}
             "website": "{{ sponsor.sponsor_website }}"
         }
-        {% if loop.index1 < sponsors.sponsors|length %}
+        {% if loop.index < sponsors2019.sponsors|length %}
         ,
         {% endif %}
         {% endfor %}
@@ -156,7 +156,7 @@
             {% endif %}
             "website": "{{ partner.sponsor_website }}"
         }
-        {% if loop.index1 < sponsors.partners|length %}
+        {% if loop.index < sponsors2019.partners|length %}
     ,
         {% endif %}
         {% endfor %}
