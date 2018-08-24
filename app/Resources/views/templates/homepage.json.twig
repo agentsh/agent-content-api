@@ -13,7 +13,7 @@
 {% endif %}
 {% set sponsor2019Snippet = sulu_snippet_load_default('sponsors-2019') %}
 {% if sponsor2019Snippet|length > 0 %}
-  {% set sponsors2019 = sponsorSnippet[0].content %}
+  {% set sponsors2019 = sponsor2019Snippet[0].content %}
 {% endif %}
 {
     "title": "{{ content.title }}",
@@ -91,6 +91,7 @@
       {% endfor %}
     ]
     {% endif %}
+    
     {% if sponsors is defined %},
     {% if sponsors.sponsor_logo|length > 0 %}
     "mainSponsorLogo": "{{ absolute_url(sponsors.sponsor_logo[0].formats['main_sponsor']) }}",
@@ -127,6 +128,8 @@
         {% endif %}
     ]
     {% endif %}
+
+
 
     {% if sponsors2019 is defined %},
     {% if sponsors2019.sponsor_logo|length > 0 %}
